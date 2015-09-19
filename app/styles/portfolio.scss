@@ -1,0 +1,99 @@
+$card-header-padding: 90px; 
+$medium-grey: rgb(147, 147, 147);
+
+body {
+  padding: 20px;
+}
+
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.cards {
+  margin: 20px -15px;
+  
+  section {
+    position: relative;
+    border-radius: 5px;
+    margin: 15px 15px;
+    padding: 20px;
+    float: left;
+    width: 100%;
+    max-width: 300px;
+    height: $card-header-padding + 160px;
+    box-shadow: 0px 2px 10px -3px rgba(0,0,0,0.8);
+    overflow: hidden;
+
+    header {
+      margin: -20px -20px 10px -20px;
+      padding-top: $card-header-padding;
+      background-color: rgb(78, 78, 78);
+      background-size: cover;
+      background-position: center;
+
+      > ul {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        
+        > li {
+          float: left;
+          padding: 3px 10px;
+          margin: 0 10px 0 0;
+          background-color: $medium-grey;
+          color: white;
+          text-shadow: 0px 0px 2px rgba(0,0,0,1);
+          font-size: 0.8em;
+        }
+      }
+
+      h3 {
+        margin: 0;
+        padding: 30px 20px 10px 20px;
+        color: white;
+        font-size: 1.3em;
+        text-shadow: 0px 0px 3px rgba(0,0,0,1), 0px 0px 3px rgba(0,0,0,1);
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%);
+
+        > span {
+          display: block;
+          opacity: 0.7;
+          padding-top: 2px;
+          font-size: 0.7em;
+          font-weight: 600;
+          
+          > span {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+    
+    > ul {
+      /* Skill list */
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+      font-size: 0.7em;
+      color: $medium-grey;
+      
+      > li {
+        float: left;
+        margin: 0;
+        padding-right: 5px;
+        
+      }
+    }
+  }
+}
+
