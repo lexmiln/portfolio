@@ -1,19 +1,19 @@
 
 $(function(){
   var ANIMATION_DURATION = 200;
-  var FUDGE = 20;
+  var FUDGE = 30;
   
   $(".cards .card article").click(function(){
     
-    var scrollTop = $(document.body).scrollTop();
-    var scrollLeft = $(document.body).scrollLeft();
+    var $body = $(document.body);
+    
+    var scrollTop = $body.scrollTop();
+    var scrollLeft = $body.scrollLeft();
     
     var $card = $(this).parent();
     var $cardarticle = $card.find("article");
-    
     var $overlaycard = $card.clone().css({opacity: 0});
     var $overlayarticle = $overlaycard.find("article");
-    
     var $zoomcard = $card.clone();
 
     var $overlay = $("<div class='overlay'></div>")
