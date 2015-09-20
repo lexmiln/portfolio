@@ -3,6 +3,7 @@
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid";
 
 $card-header-padding: 90px; 
+$light-grey: #D0D0D0;
 $medium-grey: rgb(147, 147, 147);
 $article-padding: 15px;
 $bleed: 1px;
@@ -41,6 +42,22 @@ body {
       &:hover {
         background: white;
       }
+    }
+  }
+  
+  .buttons {
+    margin-top: 20px;
+    
+    a {
+      display: inline-block;
+      width: 50px;
+      padding-top: 7px;
+      margin: 5px;
+      font-size: 1.8em;
+      height: 50px;
+      color: #212121;
+      border-radius: 50%;
+      background-color: $light-grey;
     }
   }
 }
