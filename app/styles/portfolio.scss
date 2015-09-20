@@ -84,6 +84,10 @@ main {
     @include make-md-column(6);
     @include make-lg-column(4);
 
+    article {
+      cursor: pointer;
+    }
+
     &.activated {
       article {
         opacity: 0;
@@ -109,7 +113,7 @@ main {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 @media (max-width: $screen-xs-max) {

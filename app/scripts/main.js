@@ -1,6 +1,7 @@
 
 $(function(){
   var ANIMATION_DURATION = 200;
+  var FUDGE = 20;
   
   $(".cards .card article").click(function(){
     
@@ -13,6 +14,8 @@ $(function(){
     var $overlaycard = $card.clone().css({opacity: 0});
     var $overlayarticle = $overlaycard.find("article");
     
+    var $zoomcard = $card.clone();
+
     var $overlay = $("<div class='overlay'></div>")
       .append($overlaycard)
       .appendTo(document.body)
@@ -21,22 +24,17 @@ $(function(){
       })
       .animate({
         opacity: 1
-      }, ANIMATION_DURATION)
-      .click(function(){
-        $(this).remove();
-        $card.removeClass("activated");
-      }); 
-    
-    var $zoomcard = $card.clone();
+      }, ANIMATION_DURATION);
     
     var $zoom = $("<div class='zoom'></div>")
       .append($zoomcard)
       .appendTo(document.body);
 
+    // Zoom animation.
     $zoomcard
       .offset($cardarticle.offset())
       .width($card.width())
-      .height($card.height())
+      .height($card.height() - FUDGE)
       .animate({
         top: $overlayarticle.offset().top - scrollTop,
         left: $overlayarticle.offset().left - scrollLeft,
@@ -44,9 +42,29 @@ $(function(){
         height: $overlaycard.height()
       }, ANIMATION_DURATION, "swing", function() {
         console.log("Animation complete");
-        $zoom.remove();
+        $zoom.hide();
         $overlaycard.css({
           opacity: 1
+        });
+      });
+    
+    // Unzoom animation on click.
+    $overlay
+      .click(function(){
+        $zoom.show();
+        $overlaycard.remove();
+        $overlay.animate({
+          opacity: 0
+        }, ANIMATION_DURATION);
+        $zoomcard.animate({
+          top: $cardarticle.offset().top - scrollTop,
+          left: $cardarticle.offset().left - scrollLeft,
+          width: $card.width(),
+          height: $card.height() - FUDGE
+        }, ANIMATION_DURATION, "swing", function() {
+          $overlay.remove();
+          $zoom.remove();
+          $card.removeClass("activated");
         });
       });
     
