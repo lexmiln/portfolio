@@ -3,7 +3,7 @@ $(function(){
   var ANIMATION_DURATION = 200;
   var FUDGE = 30;
   
-  $(".cards .card article").click(function(){
+  $('.cards .card article').click(function(){
     
     var $body = $(document.body);
     
@@ -11,12 +11,12 @@ $(function(){
     var scrollLeft = $body.scrollLeft();
     
     var $card = $(this).parent();
-    var $cardarticle = $card.find("article");
+    var $cardarticle = $card.find('article');
     var $overlaycard = $card.clone().css({opacity: 0});
-    var $overlayarticle = $overlaycard.find("article");
+    var $overlayarticle = $overlaycard.find('article');
     var $zoomcard = $card.clone();
 
-    var $overlay = $("<div class='overlay'></div>")
+    var $overlay = $('<div class="overlay"></div>')
       .append($overlaycard)
       .appendTo(document.body)
       .css({
@@ -26,7 +26,7 @@ $(function(){
         opacity: 1
       }, ANIMATION_DURATION);
     
-    var $zoom = $("<div class='zoom'></div>")
+    var $zoom = $('<div class="zoom"></div>')
       .append($zoomcard)
       .appendTo(document.body);
 
@@ -40,8 +40,7 @@ $(function(){
         left: $overlayarticle.offset().left - scrollLeft,
         width: $overlaycard.width(),
         height: $overlaycard.height()
-      }, ANIMATION_DURATION, "swing", function() {
-        console.log("Animation complete");
+      }, ANIMATION_DURATION, 'swing', function() {
         $zoom.hide();
         $overlaycard.css({
           opacity: 1
@@ -59,10 +58,10 @@ $(function(){
         left: $cardarticle.offset().left - scrollLeft,
         width: $card.width(),
         height: $card.height() - FUDGE
-      }, ANIMATION_DURATION, "swing", function() {
+      }, ANIMATION_DURATION, 'swing', function() {
         $overlay.remove();
         $zoom.remove();
-        $card.removeClass("activated");
+        $card.removeClass('activated');
       });
     }
     
@@ -74,11 +73,11 @@ $(function(){
         e.stopPropagation();
       });
     
-    $("<button class='unzoom'><i class='fa fa-close'></i></button>")
+    $('<button class="unzoom"><i class="fa fa-close"></i></button>')
       .appendTo($overlayarticle)
       .click(unzoom);
     
-    $card.addClass("activated");
+    $card.addClass('activated');
     
   });
   
