@@ -48,25 +48,35 @@ $(function(){
         });
       });
     
-    // Unzoom animation on click.
-    $overlay
-      .click(function(){
-        $zoom.show();
-        $overlaycard.remove();
-        $overlay.animate({
-          opacity: 0
-        }, ANIMATION_DURATION);
-        $zoomcard.animate({
-          top: $cardarticle.offset().top - scrollTop,
-          left: $cardarticle.offset().left - scrollLeft,
-          width: $card.width(),
-          height: $card.height() - FUDGE
-        }, ANIMATION_DURATION, "swing", function() {
-          $overlay.remove();
-          $zoom.remove();
-          $card.removeClass("activated");
-        });
+    function unzoom() {
+      $zoom.show();
+      $overlaycard.remove();
+      $overlay.animate({
+        opacity: 0
+      }, ANIMATION_DURATION);
+      $zoomcard.animate({
+        top: $cardarticle.offset().top - scrollTop,
+        left: $cardarticle.offset().left - scrollLeft,
+        width: $card.width(),
+        height: $card.height() - FUDGE
+      }, ANIMATION_DURATION, "swing", function() {
+        $overlay.remove();
+        $zoom.remove();
+        $card.removeClass("activated");
       });
+    }
+    
+    $overlay.click(unzoom);
+    
+    // Overlay card doesn't invoke unzoom.
+    $overlaycard
+      .click(function(e){
+        e.stopPropagation();
+      });
+    
+    $("<button class='unzoom'><i class='fa fa-close'></i></button>")
+      .appendTo($overlayarticle)
+      .click(unzoom);
     
     $card.addClass("activated");
     
