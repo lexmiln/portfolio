@@ -73,7 +73,7 @@ $(function(){
         e.stopPropagation();
       });
     
-    $('<button class="unzoom"><i class="fa fa-close"></i></button>')
+    $('<button class="unzoom"><i class="fa fa-arrow-left"></i></button>')
       .appendTo($overlayarticle)
       .click(unzoom);
     
