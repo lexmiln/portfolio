@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/favicon.f6cdd709.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.546f369b.png" />
     <link rel="stylesheet" href="styles/vendor.81ce96f2.css" />
-    <link rel="stylesheet" href="styles/main.8d601b56.css" />
+    <link rel="stylesheet" href="styles/main.css" />
     <script src="scripts/vendor/modernizr.fbe20327.js"></script>
   </head>
   <body>
@@ -39,6 +39,119 @@
         </div>
         <main>
           <div class="cards">
+            <!-- CARD: Marvel Move -->
+
+            <div class="card">
+              <article class="marvelmove">
+                <header>
+                  <h3>ZRX and Marvel Move <span>2023</span></h3>
+                  <ul>
+                    <li>Games</li>
+                    <li>Web</li>
+                  </ul>
+                </header>
+                <p>
+                  Zombies, Run! + Marvel™️ super heroes = ZRX + Marvel Move.
+                </p>
+                <ul>
+                  <li>google cloud</li>
+                  <li>kubernetes</li>
+                  <li>node</li>
+                  <li>next.js</li>
+                </ul>
+                <div>
+                  <p>
+                    On returning to the UK from America I rejoined Six to Start
+                    to work on two major projects:
+                  </p>
+                  <ul>
+                    <li>
+                      Internationalisation: We released the Zombies, Run! app
+                      and audio content in French, Japanese, Spanish (LATAM),
+                      and Korean
+                    </li>
+                    <li>
+                      A rebrand to "ZRX" to accommodate new stories made in
+                      partnership with Marvel (and better reflect the app's
+                      expanding catalogue of non-zombie "New Adventures")
+                    </li>
+                  </ul>
+                  <p>
+                    Supporting a near-total rewrite of the apps, I developed a
+                    new content management and delivery system to address the
+                    many limitations of the original CMS. The new system
+                    improved performance, enabled internationalisation, reduced
+                    time spent downloading updates in app, automated and
+                    expedited many production tasks, and reduced infrastructure
+                    overhead costs.
+                  </p>
+                  <ul>
+                    <li>
+                      <a href="https://zrx.app">ZRX website</a>
+                    </li>
+                    <li>
+                      <a href="https://zrx.app/marvel"
+                        >Marvel Move landing page</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+            <!-- CARD: ∆V•OS -->
+
+            <div class="card">
+              <article class="dvos">
+                <header>
+                  <h3>∆V•OS <span>2023</span></h3>
+                  <ul>
+                    <li>Games</li>
+                  </ul>
+                </header>
+                <p>An asteroid belt mining simulator.</p>
+                <ul>
+                  <li>godot</li>
+                  <li>gdscript</li>
+                  <li>glsl</li>
+                </ul>
+                <div>
+                  <p>
+                    ∆V•OS was an evenings-and-weekends project to scratch an
+                    itch, that it might be possible to communicate a schematic
+                    of objects in a 3D volume using a combination of colour cues
+                    and focal depth. I experimented with the idea in the Godot
+                    game engine.
+                  </p>
+                  <p>
+                    This evolved into a simulation of a vessel in an asteroid
+                    belt, navigating from asteroid to asteroid to complete
+                    mining tasks. Building the simulation required solving for
+                    how to fire a rocket engine to rendezvous with a moving
+                    object.
+                  </p>
+                  <p>
+                    Achieving the depth-of-field effect on thousands of
+                    asteroids involved extensive shader programming. The game
+                    also features a hidden "unscrambling" puzzle mechanic, using
+                    a video texture shader input and a lot of maths to calculate
+                    UV co-ordinates on a per-asteroid basis. The effect can be
+                    discovered in the prototype by carefully rotating the camera
+                    view while "dreaming".
+                  </p>
+                  <ul>
+                    <li>
+                      <a href="https://lexmiln.itch.io/dvos"
+                        >∆V•OS on itch.io</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+            <!-- CARD: Fidget -->
+
             <div class="card">
               <article class="fidget">
                 <header>
@@ -72,15 +185,15 @@
                       >Paul De Leon</a
                     >.
                   </p>
-                  <p>Fidget is my first Swift app.</p>
                   <p>
-                    The app's content is managed in a CMS using Python and
-                    Django. This enables Intuary's content team to add and
-                    update activities, with those changes immediately reflected
-                    in the app. It also makes Fidget's content
-                    <a href="https://fidgetapp.com"
-                      >accessible through the web browser</a
-                    >, and thus indexable by Google.
+                    Fidget was my first experience using Swift to build an app.
+                  </p>
+                  <p>
+                    The app's content was managed in a Django CMS. This enabled
+                    Intuary's content team to add and update activities, with
+                    those changes immediately reflected in the app. It also made
+                    Fidget's content accessible through the web browser, and
+                    thus indexable by Google.
                   </p>
                   <ul>
                     <li>
@@ -89,15 +202,13 @@
                         >Fidget in the iOS app store</a
                       >
                     </li>
-                    <li>
-                      <a href="https://fidgetapp.com/"
-                        >The Fidget CMS and idea browser</a
-                      >
-                    </li>
                   </ul>
                 </div>
               </article>
             </div>
+
+            <!-- CARD -->
+
             <div class="card">
               <article class="trainwindow">
                 <header>
@@ -113,9 +224,9 @@
                 </ul>
                 <div>
                   <p>
-                    A weekend of hacking with Unity led to an unexpectedly
-                    delightful result with an approximation of what you might
-                    see looking out of a train window.
+                    A weekend of hacking with Unity led to a pleasing result
+                    with an approximation of what you might see looking out of a
+                    train window.
                   </p>
                   <p>
                     The experiment makes as much use of the Unity Editor as
@@ -128,7 +239,8 @@
                   <p>
                     The engine generates new tiles "just in time" as the camera
                     moves, so that the landscape appears to go on forever while
-                    only a few dozen sprites are ever on screen at once.
+                    only a few dozen sprites are present in the game world at
+                    once.
                   </p>
                   <p>
                     The art in the prototype is from Tiny Speck's public domain
@@ -147,6 +259,9 @@
                 </div>
               </article>
             </div>
+
+            <!-- CARD -->
+
             <div class="card">
               <article class="thesunstandsstill">
                 <header>
@@ -202,6 +317,9 @@
                 </div>
               </article>
             </div>
+
+            <!-- CARD -->
+
             <div class="card">
               <article class="farfaria">
                 <header>
@@ -277,6 +395,9 @@
                 </div>
               </article>
             </div>
+
+            <!-- CARD -->
+
             <div class="card">
               <article class="thewalk">
                 <header>
@@ -319,12 +440,20 @@
                   <p>
                     The app's user interface called for animated, drop-shadowed
                     bezier paths on top of large, detailed maps, at 60fps. To
-                    achieve this on modest hardware I wrote a custom graphics
-                    engine directly on top of OpenGL.
+                    achieve this on the modest hardware of the time, I wrote a
+                    custom graphics engine directly on top of OpenGL.
                   </p>
+                  <ul>
+                    <li>
+                      <a href="https://thewalkgame.com/">The Walk website</a>
+                    </li>
+                  </ul>
                 </div>
               </article>
             </div>
+
+            <!-- CARD -->
+
             <div class="card">
               <article class="zombiesrun">
                 <header>
@@ -390,6 +519,9 @@
                 </div>
               </article>
             </div>
+
+            <!-- CARD -->
+
             <div class="card">
               <article class="tegola">
                 <header>
@@ -464,11 +596,16 @@
                   <p>
                     I presented my findings at IEEE INFOCOM in San Diego in
                     2010.
+                    <a
+                      href="https://www.researchgate.net/publication/224138836_Slow_Frequency_Hopping_for_Mitigating_Tidal_Fading_on_Rural_Long_Distance_Over-Water_Wireless_Links/citations"
+                      >ResearchGate counts 14 citations</a
+                    >
+                    of the paper.
                   </p>
                   <ul>
                     <li>
                       <a
-                        href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=5466612&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D5466612"
+                        href="https://ieeexplore.ieee.org/abstract/document/5466612"
                         >Paper on IEEE Xplore</a
                       >
                     </li>
@@ -482,6 +619,9 @@
                 </div>
               </article>
             </div>
+
+            <!-- CARD -->
+
             <div class="card">
               <article class="xts">
                 <header>
